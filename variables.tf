@@ -37,3 +37,9 @@ variable "instance_type" {
   description = "Instance type of EC2"
   default     = "t2-micro"
 }
+
+variable "db_password" {
+  description = "Password to airflow metadata database"
+  type        = "string"
+}
+
