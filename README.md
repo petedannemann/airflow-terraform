@@ -8,7 +8,9 @@ Easily provision resources on AWS for a highly scalable and secure airflow envir
 
 - Terraform is used to provision resources in a VPC.
 - Terraform's state is stored in a private S3 bucket.
-- Redis, PostgreSQL, and Airflow's services are deployed on an EC2 instance.
+- Airflow's services are deployed on an EC2 instance.
+- The Airflow metadata database is deployed on RDS (Postgres).
+- The Airflow message broker is deployed on Elasticcache (Redis).
 - AWS Secrets Manager is used to securely feed environment variables such as airflow's fernet key into the EC2 instance.
 
 ## Requirements
