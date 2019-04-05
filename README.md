@@ -33,10 +33,12 @@ aws secretsmanager create-secret --name airflow-fernet-key \
     --secret-string "my-fernet-key"
 ```
 
-- Create an S3 bucket to hold your backend
+- Create an S3 bucket to hold Terraform's backend
   `aws s3api create-bucket --bucket airflow-backend --region us-east1 --acl private`
 
-## Commands
+## Terraform Commands
+
+**First enter the Terraform directory** `cd terraform`
 
 - _See a plan of resources_ `terraform plan`
 - _Provision resources_ `terraform apply`
