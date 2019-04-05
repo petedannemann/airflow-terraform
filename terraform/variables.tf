@@ -35,7 +35,7 @@ variable "ami" {
 
 variable "instance_type" {
   description = "Instance type of EC2"
-  default     = "t2-micro"
+  default     = "t2.micro"
 }
 
 variable "db_password" {
