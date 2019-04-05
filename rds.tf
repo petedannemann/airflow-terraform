@@ -32,7 +32,7 @@ resource "aws_security_group" "airflow_database" {
   }
 }
 
-resource "aws_security_group_rule" "allow_airflow_database" {
+resource "aws_security_group_rule" "airflow_database" {
   security_group_id = "${aws_security_group.airflow_database.id}"
   type              = "ingress"
   from_port         = 5432

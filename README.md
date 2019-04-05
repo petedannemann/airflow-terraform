@@ -10,7 +10,7 @@ Easily provision resources on AWS for a highly scalable and secure airflow envir
 - Terraform's state is stored in a private S3 bucket.
 - Airflow's services are deployed on an EC2 instance.
 - The Airflow metadata database is deployed on RDS (Postgres).
-- The Airflow message broker is deployed on Elasticcache (Redis).
+- The Airflow message broker is deployed on Elastic Cache (Redis).
 - AWS Secrets Manager is used to securely feed environment variables such as airflow's fernet key into the EC2 instance.
 
 ## Requirements
