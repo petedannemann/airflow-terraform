@@ -15,7 +15,7 @@ resource "aws_subnet" "this" {
   cidr_block              = "${cidrsubnet(aws_vpc.this.cidr_block, 8, count.index)}"
   availability_zone       = "${data.aws_availability_zones.available.names[count.index]}"
   vpc_id                  = "${aws_vpc.this.id}"
-  map_public_ip_on_launch = true
+  map_public_ip_on_launch = false
 
   tags {
       Name = "${var.name_prefix}-subnet-${data.aws_availability_zones.available.names[count.index]}"
