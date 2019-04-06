@@ -43,3 +43,7 @@ variable "db_password" {
   type        = "string"
 }
 
+variable "airflow_fernet_secret_string" {
+  description = "String representing airflow fernet"
+  type        = "string"
+}
