@@ -65,19 +65,16 @@ RUN set -ex \
     /usr/share/doc \
     /usr/share/doc-base
 
-COPY scripts/set_secrets.py /set_secrets.py
+COPY scripts/set_fernet.py /set_fernet.py
 COPY scripts/entrypoint.sh /entrypoint.sh
 COPY config/airflow.cfg ${AIRFLOW_HOME}/airflow.cfg
 COPY dags ${AIRFLOW_HOME}/dags
 #COPY plugins ${AIRFLOW_HOME}/plugins
 
-# Set all secret environment variables
-#RUN python scripts/set_secrets.py
 RUN chown -R airflow: ${AIRFLOW_HOME}
 
 EXPOSE 8080 5555 8793
 
 USER airflow
 WORKDIR ${AIRFLOW_HOME}
-ENTRYPOINT ["/bin/bash" , "-c", "python3 /set_secrets.py && source /entrypoint.sh"]
-CMD ["webserver"] # set default arg for entrypoint
+ENTRYPOINT ["/entrypoint.sh"]

@@ -15,7 +15,7 @@ resource "aws_db_instance" "this" {
   db_subnet_group_name      = "${aws_db_subnet_group.this.name}"
   final_snapshot_identifier = "${var.name_prefix}-database-final-snapshot-1"
   skip_final_snapshot       = false
-  vpc_security_group_ids    = [ "${aws_security_group.airflow_database.id}"]
+  vpc_security_group_ids    = ["${aws_security_group.airflow_database.id}"]
   port                      = "5432"
 }
 
@@ -40,6 +40,6 @@ resource "aws_security_group_rule" "airflow_database" {
   protocol          = "tcp"
 
   cidr_blocks = [
-    "${aws_instance.airflow.private_ip}/32"
+    "${aws_instance.airflow.private_ip}/32",
   ]
 }
